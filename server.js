@@ -10,10 +10,11 @@
 const fs = require('fs');
 
 const readableStream = fs.createReadStream('./input.txt', {
-  highWaterMark: 1024 // 1 kilobyte
+  highWaterMark: 10 //we are specifying the size of internal buffer in bytes
 });
 const writableStream = fs.createWriteStream('./output.txt');
 readableStream.on('data', (chunk) => {
+  console.log(chunk)
   console.log(`Received ${chunk.length} bytes of data`);
   writableStream.write(chunk)
 });
