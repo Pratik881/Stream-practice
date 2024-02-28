@@ -6,6 +6,10 @@ Important events on a readable stream
   -the event handler fn receives a single argument,which is the actual chunk of data as a Buffer object by default
 -end event: emitted when there is no more data to be consumed from the stream
 
+end Event:
+emitted by readble stream when no more data 
+end of stream
+
 Important events on a writable stream
 -drain event: Writable stream can receive more data
 This event is typically used in scenarios where backpressure is applied to prevent overwhelming the writable stream's internal buffer.
@@ -15,3 +19,5 @@ When the writable stream's buffer becomes full, it temporarily stops accepting d
 It's important to note that the 'finish' event does not necessarily mean that the data has been fully processed or consumed by the recipient. It simply indicates the completion of the writing operation.
 
 Error Handling: Both readable and writable streams emit an 'error' event when an error occurs. It's crucial to handle these errors to prevent application crashes and ensure graceful handling of failures.
+
+
